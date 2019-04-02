@@ -90,5 +90,6 @@ plot(log_return['EUROSTOXX'], ols_fit.fittedvalues, 'r')
 ```python
 log_return['EUROSTOXX'].rolling(252).corr(log_return['VSTOXX']).plot(figsize=(15, 10))
 ```
-![图片](https://github.com/JentChang/EURO-STOXX-50/blob/master/rol_ols.png)
+![图片](/images/rol_ols.png)
+
 
