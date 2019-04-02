@@ -47,7 +47,7 @@ data.head()
 from pylab import  *
 data.plot(subplots=True, figsize=(15, 10), color='b', grid='True')
 ```
-[!图片](/images/history.png)
+[图片](/images/history.png)
 
 ```python
 data[data.EUROSTOXX == 0]
@@ -57,7 +57,7 @@ data[data.EUROSTOXX == 0]
 ```python
 data.diff().hist(figsize= (15, 5), color='b', bins=100)
 ```
-[!图片](/images/diff.png)
+[图片](/images/diff.png)
 
 ### 绘制对数收益率图表
 
@@ -66,7 +66,7 @@ import numpy as np
 log_return = np.log(data / data.shift(1)).dropna()
 log_return.plot(subplots=True, figsize=(15, 10), color='b', grid=True)
 ```
-[!图片](/images/rol.png)
+[图片](/images/rol.png)
 
 ## 相关性
 
@@ -81,7 +81,7 @@ ols_fit = sm.OLS(log_return['VSTOXX'].values, log_return['EUROSTOXX'].values).fi
 log_return.plot(figsize=(15, 10), x='EUROSTOXX', y='VSTOXX', kind='scatter')
 plot(log_return['EUROSTOXX'], ols_fit.fittedvalues, 'r')
 ```
-[!图片](/images/ols.png)
+[图片](/images/ols.png)
 
 ### 在时间序列上的相关性
 
@@ -90,5 +90,5 @@ plot(log_return['EUROSTOXX'], ols_fit.fittedvalues, 'r')
 ```python
 log_return['EUROSTOXX'].rolling(252).corr(log_return['VSTOXX']).plot(figsize=(15, 10))
 ```
-[!图片](/images/rol_ols.png)
+[图片](/images/rol_ols.png)
 
